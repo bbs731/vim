@@ -10,6 +10,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 
 Plug 'scrooloose/nerdcommenter'
+Plug 'unkiwii/vim-nerdtree-sync'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -40,6 +41,10 @@ let g:airline#extensions#tabline#enabled = 1
 " let g:airline_theme='badwolf'
 let g:airline_theme='molokai'
 let g:airline#extensions#tabline#formatter = 'default'
+
+"NERDTree sync settings for plugin unkiwii/vim-nerdtree-sync
+let g:nerdtree_sync_cursorline = 1
+let g:NERDTreeHighlightCursorline = 1
 
 " Begin NerdCommenter
 let mapleader=","
@@ -96,8 +101,8 @@ set nocompatible
 filetype plugin indent on
 
 "auto open NERDTree when open vim
-"autocmd VimEnter * NERDTree
-map <C-n> :NERDTreeToggle<CR>
+autocmd VimEnter * NERDTree
+map <C-n> :NERDTreeToggle %<CR>
 "close vim if the only window left open is NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
